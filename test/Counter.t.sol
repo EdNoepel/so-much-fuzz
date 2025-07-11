@@ -12,7 +12,8 @@ contract CounterTest is Test {
         counter.setNumber(0);
     }
 
-    // FIXME: [PASS] test_Increment(bool) (runs: 256, μ: 22921, ~: 32167)
+    // [PASS] test_Increment(bool) (runs: 256, μ: 22921, ~: 32167)
+    // TODO: would prefer runs: 2
     function test_Increment(bool foo) public {
         if (foo) {
             counter.increment();
@@ -22,7 +23,8 @@ contract CounterTest is Test {
         }
     }
 
-    // FIXME: [PASS] testFuzz_SetNumber(bool,bool) (runs: 256, μ: 27256, ~: 32922)
+    // [PASS] testFuzz_SetNumber(bool,bool) (runs: 256, μ: 27256, ~: 32922)
+    // TODO: would prefer runs: 4
     function testFuzz_SetNumber(bool bar, bool baz) public {
         counter.setNumber((bar ? 1 : 0) + (baz ? 1 : 0));
         assertGe(counter.number(), 0);
